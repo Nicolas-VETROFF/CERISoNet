@@ -13,14 +13,14 @@ app.use("/api", router);
 
 // Start HTTP and HTTPS servers
 app.listen(config.port_http, () => {
-    console.log("Server is running on port " + config.port_http);
+  console.log("Server is running on port " + config.port_http);
 });
 
 const options = {
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem')
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
 };
 
 const server = https.createServer(options, app).listen(config.port_https, () => {
-    console.log("HTTPS Server running on port " + config.port_https);
+  console.log("HTTPS Server running on port " + config.port_https);
 });
