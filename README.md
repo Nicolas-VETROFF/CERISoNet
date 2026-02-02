@@ -1,5 +1,5 @@
 # CERISoNet
 
 ## PORTS
-- 3122
-- 3123
+- 3122 (http)
+- 3123 (https)
