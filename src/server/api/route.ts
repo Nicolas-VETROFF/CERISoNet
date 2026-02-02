@@ -5,8 +5,8 @@ const router = Router();
 
 router.use("/auth", authRouter);
 
-authRouter.get("/", (req, res) => {
-    res.send("Hello World");
+router.get("/", (req, res) => {
+    res.send("Welcome API !!");
 });
 
 export default router;
