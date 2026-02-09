@@ -17,9 +17,9 @@ app.get("/login", (req, res) => {
 });
 
 // Start HTTP and HTTPS servers
-app.listen(config.port_http, () => {
-  console.log("Server is running on port " + config.port_http);
-});
+// app.listen(config.port_http, () => {
+//   console.log("Server is running on port " + config.port_http);
+// });
 
 const options = {
   key: fs.readFileSync('key.pem'),
