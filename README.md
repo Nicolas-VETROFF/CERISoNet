@@ -21,10 +21,11 @@ npm install;
 npm run dev;
 ```
 
-## Création du build
+## Création et lancement du build
 
 ```bash
 npm run build;
+npm run start;
 ```
 
 ## Ports utilisés

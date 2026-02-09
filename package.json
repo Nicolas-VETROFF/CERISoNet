@@ -16,10 +16,10 @@
   "main": "app.ts",
   "scripts": {
     "dev": "nodemon src/server/app.ts",
-    "build": "tsc",
+    "build": "tsc && cp -r src/app dist/src/app",
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write \"src/**/*.ts\"",
-    "start": "node dist/index.js"
+    "start": "node dist/src/server/app.js"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
