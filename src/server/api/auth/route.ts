@@ -3,11 +3,6 @@ import config from "../../config/config";
 
 const authRouter = Router();
 
-// 1. Get example
-authRouter.get("/login", (req, res) => {
-  res.sendFile("index.html", { root: config.app_dir });
-});
-
 authRouter.post("/login", (req, res) => {
   const { username, password } = req.body;
 
