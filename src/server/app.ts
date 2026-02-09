@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api", router);
 
 // TODO: Remove this route in step 2
-app.get("/", (req, res) => {
+app.get("/login", (req, res) => {
   res.sendFile("index.html", { root: config.app_dir });
 });
 
