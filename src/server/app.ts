@@ -11,6 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", router);
 
+// TODO: Remove this route in step 2
+app.get("/", (req, res) => {
+  res.sendFile("index.html", { root: config.app_dir });
+});
+
 // Start HTTP and HTTPS servers
 app.listen(config.port_http, () => {
   console.log("Server is running on port " + config.port_http);
