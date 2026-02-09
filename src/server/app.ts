@@ -6,6 +6,7 @@ import https from "https";
 
 const app = express();
 
+// Middleware to parse JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -16,8 +17,7 @@ app.get("/login", (req, res) => {
   res.sendFile("index.html", { root: config.app_dir });
 });
 
-// Start HTTPS server
-
+// Starts HTTPS server
 const options = {
   key: fs.readFileSync('key.pem'),
   cert: fs.readFileSync('cert.pem')

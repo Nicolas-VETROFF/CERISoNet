@@ -1,8 +1,8 @@
 import { Router } from "express";
-import config from "../../config/config";
 
 const authRouter = Router();
 
+// Route for user login
 authRouter.post("/login", (req, res) => {
   const { username, password } = req.body;
 
@@ -10,8 +10,9 @@ authRouter.post("/login", (req, res) => {
   res.send("Login attempt received");
 });
 
+// TODO: uncomment for step 2 with PostgreSQL integration
 // authRouter.post("/login", (req, res) => {
-//   // TODO: Connect with MongoDB to verify user credentials
+//   // TODO: Connect with PostgreSQL to verify user credentials
 
 //   // Dummy credentials and verification
 //   const credentials = {
