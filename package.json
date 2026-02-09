@@ -16,7 +16,7 @@
   "main": "app.ts",
   "scripts": {
     "dev": "nodemon src/server/app.ts",
-    "build": "tsc && cp -r src/app dist/src/app",
+    "build": "tsc -p tsconfig.server.json",
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "node dist/src/server/app.js"
@@ -35,6 +35,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@angular/cli": "^21.1.3",
     "fs": "^0.0.1-security",
     "https": "^1.0.0"
   }
