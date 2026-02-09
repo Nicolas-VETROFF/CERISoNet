@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// Basic configuration for the server: ports, directories, db, etc.
 const config = {
   port_http: Number(process.env.PORT_HTTP) || 3122,
   port_https: Number(process.env.PORT_HTTPS) || 3123,

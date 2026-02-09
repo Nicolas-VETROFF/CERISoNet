@@ -28,6 +28,5 @@ npm run build;
 npm run start;
 ```
 
-## Ports utilisés
-- 3122 (http)
+## Port utilisé
 - 3123 (https)
