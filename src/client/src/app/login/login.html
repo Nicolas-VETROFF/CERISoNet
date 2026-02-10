@@ -1,0 +1,13 @@
+<div>
+  <h1>Login</h1>
+
+  <form (submit)="onSubmit(username.value, password.value); $event.preventDefault()">
+    <label for="username">Username:</label>
+    <input #username type="text" id="username" name="username" />
+
+    <label for="password">Password:</label>
+    <input #password type="password" id="password" name="password" />
+
+    <button type="submit">Login</button>
+  </form>
+</div>

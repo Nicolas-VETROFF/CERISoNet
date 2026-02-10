@@ -1,9 +1,9 @@
 import { Router } from "express";
-import authRouter from "./auth/route";
+import loginRouter from "./login/route";
 
 const router = Router();
 
-router.use("/auth", authRouter);
+router.use("/login", loginRouter);
 
 // Route for API root
 router.get("/", (_, res) => {

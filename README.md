@@ -13,20 +13,41 @@ rm csr.pem;
 
 ```bash
 npm install;
+cd ./src/client;
+npm install;
+cd ../..;
 ```
 
-## Lancement de l'environnement de DEV
+## Lancement de l'environnement de DEV à la racine (serveur seulement)
 
 ```bash
 npm run dev;
 ```
 
-## Création et lancement du build
+## Lancement de l'environnement de DEV dans ./src/client (client seulement)
+
+```bash
+cd ./src/client;
+npm run dev;
+cd ../..;
+```
+
+## Création et lancement du build (client seulement)
+
+```bash
+cd ./src/client;
+npm run build;
+npx http-server ./dist/client/browser -p 4201;
+cd ../..;
+```
+
+## Création et lancement du build (serveur + client)
 
 ```bash
 npm run build;
 npm run start;
 ```
 
-## Port utilisé
+## Ports disponibles
+- 3122 (http)
 - 3123 (https)
