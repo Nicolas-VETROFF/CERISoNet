@@ -6,7 +6,7 @@ const router = Router();
 router.use("/auth", authRouter);
 
 // Route for API root
-router.get("/", (req, res) => {
+router.get("/", (_, res) => {
   res.send("Welcome API !!");
 });
 

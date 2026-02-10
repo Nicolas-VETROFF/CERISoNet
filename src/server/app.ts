@@ -10,10 +10,15 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Serve static files from the Angular build output (JS/CSS/assets)
+app.use(express.static(config.app_dir));
+
 app.use("/api", router);
 
-// TODO: Remove this route in step 2
-app.get("/login", (req, res) => {
+// SPA fallback: serve index.html for any non-API route so Angular can handle routing
+// Fallback middleware: handle any non-API request by returning index.html
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api')) return next();
   res.sendFile("index.html", { root: config.app_dir });
 });
 
