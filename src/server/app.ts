@@ -3,6 +3,9 @@ import config from "./config/config";
 import router from "./api/route";
 import fs from "fs";
 import https from "https";
+import session from "express-session";
+
+const MongoDBStore = require('connect-mongodb-session')(session);
 
 const app = express();
 
@@ -12,6 +15,19 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from the Angular build output (JS/CSS/assets)
 app.use(express.static(config.app_dir));
+
+app.use(session({
+  secret: config.mongodb.secret,
+  saveUninitialized: false,
+  resave: false,
+  store: new MongoDBStore({
+    uri: config.mongodb.uri,
+    collection: config.mongodb.collection_name,
+  }),
+  cookie: {
+    maxAge: 24 * 3600 * 1000 // 1 day
+  }
+}))
 
 app.use("/api", router);
 

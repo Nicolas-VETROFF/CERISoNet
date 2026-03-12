@@ -32,12 +32,11 @@ npm run dev;
 cd ../..;
 ```
 
-## Création et lancement du build (client seulement)
+## Création du build (client seulement)
 
 ```bash
 cd ./src/client;
 npm run build;
-npx http-server ./dist/client/browser -p 4201;
 cd ../..;
 ```
 
